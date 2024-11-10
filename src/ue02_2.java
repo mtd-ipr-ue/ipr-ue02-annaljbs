@@ -4,50 +4,48 @@ public class ue02_2 {
     public static void main(String[] args) {
         
      System.out.print("Geben Sie eine Jahreszahl ein: ");
-     int jahr = In.readInt();
+     int year = In.readInt();
 
      
      System.out.print("Geben Sie einen Monats-Wert zwischen 1 und 12 ein: ");
-     int monat = In.readInt();
+     int month = In.readInt();
 
         
-        if (monat < 1 || monat > 12) {
+        if (month < 1 || month > 12) {
             System.out.println("Fehler: Der Monat muss zwischen 1 und 12 liegen.");
             return;
         }
-
         
-        int tageImMonat;
-        switch (monat) {
-            case 1: // Januar
-            case 3: // März
-            case 5: // Mai
-            case 7: // Juli
-            case 8: // August
-            case 10: // Oktober
-            case 12: // Dezember
-                tageImMonat = 31;
+        int daysmonth;
+        switch (month) {
+            case 1: 
+            case 3:
+            case 5: 
+            case 7:
+            case 8:
+            case 10:
+            case 12: 
+                daysmonth = 31;
                 break;
-            case 4: // April
-            case 6: // Juni
-            case 9: // September
-            case 11: // November
-                tageImMonat = 30;
+            case 4: 
+            case 6:
+            case 9: 
+            case 11:
+                daysmonth = 30;
                 break;
-            case 2: // Februar
+            case 2: 
                 
-                 if ((jahr % 4 == 0 && jahr % 100 != 0) || (jahr % 400 == 0)) {
-                    tageImMonat = 29; // Schaltjahr
+                 if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                    daysmonth = 29;
                 } else {
-                    tageImMonat = 28; // Kein Schaltjahr
+                    daysmonth = 28;
                 }
                 break;
             default:
                 
-                tageImMonat = 0;
+                daysmonth = 0;
         }
 
-        
-        System.out.println("Der Monat " + monat + " im Jahr " + jahr + " hat " + tageImMonat + " Tage.");
+        System.out.println("Der Monat " + month + " im Jahr " + year + " hat " + daysmonth + " Tage.");
     }
 }
